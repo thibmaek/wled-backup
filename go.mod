@@ -1,3 +1,3 @@
-module thibmaek/go-simple-cli
+module thibmaek/wled-export
 
 go 1.17

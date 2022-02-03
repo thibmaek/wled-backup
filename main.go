@@ -3,7 +3,8 @@ package main
 import (
 	"fmt"
 	"os"
-	"thibmaek/go-simple-cli/cmd"
+	"strings"
+	cmds "thibmaek/wled-export/cmd"
 )
 
 type Command interface {
@@ -12,21 +13,22 @@ type Command interface {
 }
 
 func main() {
+	cmdNames := []string{cmds.ExportCmdName}
+
 	if len(os.Args) < 2 {
-		fmt.Println("Please pass a Command. Options:")
+		fmt.Printf("Please pass a Command. Options: %s\n", strings.Join(cmdNames, ", "))
 		os.Exit(1)
 	}
 
-	executable := os.Args[0]
 	cmdName := os.Args[1]
 	flags := os.Args[2:]
 
 	var cmd Command
 	switch cmdName {
-	case ExampleCmdName:
-		cmd = NewExampleCommand(flags)
+	case cmds.ExportCmdName:
+		cmd = cmds.NewExportCmd(flags)
 	default:
-		fmt.Println("Unknown Command. Options:") 
+		fmt.Printf("Unknown Command. Options: %s\n", strings.Join(cmdNames, ", "))
 		os.Exit(1)
 	}
 
