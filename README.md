@@ -33,7 +33,7 @@ It's also possible to reupload these files across host and syncing the presets i
 
 ## Install
 
-Download the correct binary for your platform from the [`bin` folder](https://github.com/thibmaek/wled-backup/tree/main/bin). Optionally rename it if you want but this is not required.
+Download the latest release binary for your platform from the [releases page](https://github.com/thibmaek/wled-backup/releases). Optionally rename it if you want but this is not required.
 
 ## Usage
 
