@@ -2,6 +2,8 @@
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg)](https://github.com/RichardLitt/standard-readme)
 [![.github/workflows/ci.yaml](https://github.com/thibmaek/wled-backup/actions/workflows/ci.yaml/badge.svg)](https://github.com/thibmaek/wled-backup/actions/workflows/ci.yaml)
+![Go version](https://img.shields.io/github/go-mod/go-version/thibmaek/wled-backup)
+[![Go Report](https://goreportcard.com/badge/github.com/thibmaek/wled-backup)](https://github.com/thibmaek/wled-backup)
 
 <!-- Short Description: 
 - Must not have its own title.
