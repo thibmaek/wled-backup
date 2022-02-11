@@ -15,7 +15,6 @@ jobs:
         run: go vet
       - name: 'Build'
         run: make build -j
-      - name: 'Generate Changelog'
       - name: 'Release'
         uses: softprops/action-gh-release@v1
         with:
