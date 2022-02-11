@@ -1,0 +1,22 @@
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: actions/setup-go@master
+        with:
+          go-version: 1.17
+      - name: 'Vet'
+        run: go vet
+      - name: 'Build'
+        run: make build -j
+      - name: 'Generate Changelog'
+      - name: 'Release'
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ./bin/wled-backup*
