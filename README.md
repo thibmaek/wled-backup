@@ -1,7 +1,7 @@
 # WLED Backup (wled-backup)
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg)](https://github.com/RichardLitt/standard-readme)
-[![.github/workflows/release.yaml](https://github.com/thibmaek/wled-backup/actions/workflows/release.yaml/badge.svg)](https://github.com/thibmaek/wled-backup/actions/workflows/release.yaml)
+[![.github/workflows/ci.yaml](https://github.com/thibmaek/wled-backup/actions/workflows/ci.yaml/badge.svg)](https://github.com/thibmaek/wled-backup/actions/workflows/ci.yaml)
 
 <!-- Short Description: 
 - Must not have its own title.
