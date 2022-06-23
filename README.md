@@ -5,15 +5,7 @@
 ![Go version](https://img.shields.io/github/go-mod/go-version/thibmaek/wled-backup)
 [![Go Report](https://goreportcard.com/badge/github.com/thibmaek/wled-backup)](https://github.com/thibmaek/wled-backup)
 
-<!-- Short Description: 
-- Must not have its own title.
-- Must be less than 120 characters.
-- Must not start with `> `
-- Must be on its own line.
-- Must match the description in the packager manager's `description` field.
-- Must match GitHub's description (if on GitHub).
- -->
-Simple CLI tool to backup presets & configuration from a WLED device.
+Simple CLI tool to backup presets & configuration from a [WLED](https://github.com/Aircoookie/WLED) device.
 
 ## Table of Contents
 <!-- - Must link to all Markdown sections in the file.
