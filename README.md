@@ -14,6 +14,7 @@ Simple CLI tool to backup presets & configuration from a [WLED](https://github.c
 - [Background](#background)
 - [Install](#install)
 - [Usage](#usage)
+- [Development](#development)
 - [License](#license)
 
 ## Background
@@ -47,11 +48,50 @@ $ ./wled-backup_linux_x64 export --hosts=wled-tv.local,192.168.1.177
 By default this will output the backup files in the current folder. You can optionally specify an output directory with the `--outputDir` flag:
 
 ```console
-$ ./wled-backup_linux_x64 export --hosts=192.168.1.12,192.168.1.177  --outputDir=/home/user/wled_backups
+$ ./wled-backup_linux_x64 export --hosts=192.168.1.12,192.168.1.177 --outputDir=/home/user/wled_backups
+```
+
+## Development
+
+To build from source make sure you have the following dependencies installed:
+
+- GNU Make 3.81+
+- [asdf](https://asdf-vm.com)
+
+The version of Go is determined by `.tool-versions`, the configuration file for asdf.
+To install the correct version determined by the repository run the following command:
+
+```shell
+$ asdf install
+```
+
+You can then use the provided Make targets to build for all or specific architectures:
+
+```shell
+# Build for 64 bit (Linux, macOS Intel, Windows)
+$ make build_x64
+
+# Build for ARM (Linux, Raspberry Pi, macOS M1)
+$ make build_x64
+
+# Build all artifacts
+$ make build
+```
+
+The built artifacts will then be available in the `./bin/` folder:
+
+```console
+bin
+├── wled-backup_linux_armv6
+├── wled-backup_linux_armv7
+├── wled-backup_linux_x64
+├── wled-backup_mac_arm64
+├── wled-backup_mac_x64
+└── wled-backup_win_x64.exe
 ```
 
 ## License
 
 Unlicense
 
-For more info, see [license file](./LICENSE)
+For more info, see [LICENSE file](./LICENSE)
