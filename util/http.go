@@ -25,16 +25,24 @@ func GetHostname(host string) (string, error) {
 	}
 	defer res.Body.Close()
 
+	if res.StatusCode != http.StatusOK {
+		return "", fmt.Errorf("Failed to get hostname for host '%s' (HTTP %d)", host, res.StatusCode)
+	}
+
 	err = json.NewDecoder(res.Body).Decode(&r)
 	return r.Id.Mdns, err
 }
 
 func DownloadFile(filepath string, url string) error {
-	resp, err := http.Get(url)
+	res, err := http.Get(url)
 	if err != nil {
 		return err
 	}
-	defer resp.Body.Close()
+	defer res.Body.Close()
+
+	if res.StatusCode != http.StatusOK {
+		return fmt.Errorf("Failed to download file '%s' (HTTP %d)", url, res.StatusCode)
+	}
 
 	out, err := os.Create(filepath)
 	if err != nil {
@@ -42,6 +50,6 @@ func DownloadFile(filepath string, url string) error {
 	}
 	defer out.Close()
 
-	_, err = io.Copy(out, resp.Body)
+	_, err = io.Copy(out, res.Body)
 	return err
 }

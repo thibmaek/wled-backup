@@ -3,6 +3,7 @@ package cmd
 import (
 	"flag"
 	"fmt"
+	"log"
 	"os"
 	"path/filepath"
 	"strings"
@@ -80,11 +81,17 @@ func (cmd *ExportCmd) Run() {
 func downloadConfig(host string, destDir string) {
 	fmt.Printf("Downloading config for host '%s'\n", host)
 	url := fmt.Sprintf("http://%s/edit?download=/cfg.json", host)
-	util.DownloadFile(fmt.Sprintf("%s.config.json", destDir), url)
+	err := util.DownloadFile(fmt.Sprintf("%s.config.json", destDir), url)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func downloadPresets(host string, destDir string) {
 	fmt.Printf("Downloading presets for host '%s'\n", host)
 	url := fmt.Sprintf("http://%s/edit?download=/presets.json", host)
-	util.DownloadFile(fmt.Sprintf("%s.presets.json", destDir), url)
+	err := util.DownloadFile(fmt.Sprintf("%s.presets.json", destDir), url)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
