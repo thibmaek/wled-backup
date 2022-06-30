@@ -2,6 +2,10 @@
 
 OUTPUT_NAME = wled-backup
 
+dependencies:
+	asdf install
+	pre-commit install
+
 build_x64:
 	GOOS=darwin go build -o bin/$(OUTPUT_NAME)_mac_x64 .
 	GOOS=linux go build -o bin/$(OUTPUT_NAME)_linux_x64 .
