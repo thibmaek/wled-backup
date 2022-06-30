@@ -8,9 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
-      - uses: actions/setup-go@master
-        with:
-          go-version: 1.18
+      - name: 'Install runtimes (via asdf)'
+        uses: asdf-vm/actions/install@v1
       - name: 'Vet'
         run: go vet
       - name: 'Build'
